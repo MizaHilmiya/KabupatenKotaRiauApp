@@ -39,5 +39,12 @@ class DetailKabKotaActivity : AppCompatActivity() {
             showViewPeta.putExtra(ViewPetaActivity.EXTRA_URL_PETA, dataKabKota.url_peta_wilayah)
             startActivity(showViewPeta)
         }
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable back button
+
+        // Handle back button click
+        binding.toolbar.setNavigationOnClickListener {
+            finish() // Close current activity and go back to MainActivity
+        }
     }
 }
